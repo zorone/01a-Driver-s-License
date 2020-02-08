@@ -1,5 +1,5 @@
 #include <stdio.h>
-#include <math.h>
+#include<ctype.h>
 
 int main() {
     char people[5][10];
@@ -9,6 +9,11 @@ int main() {
     scanf("%s", people[0]);
     scanf("%d", &AvaibleCustomer);
     scanf("%s %s %s %s", people[1], people[2], people[3], people[4]);
+    for(int i=0; i<5; i++){
+        for(int j=0; people[i][j]!='\0'; j++){
+            people[i][j]=tolower(people[i][j]);
+        }
+    }
     for (int i=0; i<4; i++){
         for (int j=0; people[i][j]!='\0';j++){
             for (int k=0; k<10-j; k++){

@@ -1,4 +1,5 @@
 #include <stdio.h>
+#include <math.h>
 
 int main() {
     char people[2][5][10];
@@ -26,8 +27,18 @@ int main() {
     }
     for (int i=0; i<5; i++){
         if (people[1][i][0]==people[1][0][1]){
-            printf("%d", i/AvaibleCustomer*20);
+            if(people[1][i][0]%AvaibleCustomer==0){
+            temp=(people[1][i][0])/AvaibleCustomer*20;
+            }
+            else{
+                temp=(people[1][i][0]+1)/AvaibleCustomer*20;
+            }
         }
     }
+    printf("%d", temp);
     return 0;
 }
+
+
+
+

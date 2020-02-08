@@ -4,10 +4,10 @@
 int main() {
     char people[5][10];
     int people1[2][5];
-    int AvaibleCustomer;
+    int AvailableCustomer;
     int temp;
     scanf("%s", people[0]);
-    scanf("%d", &AvaibleCustomer);
+    scanf("%d", &AvailableCustomer);
     scanf("%s %s %s %s", people[1], people[2], people[3], people[4]);
     for(int i=0; i<5; i++){
         for(int j=0; people[i][j]!='\0'; j++){
@@ -33,11 +33,11 @@ int main() {
     }
     for (int i=0; i<5; i++){
         if (people1[0][i]==people1[1][0]){
-            if(i%AvaibleCustomer==0){
-            temp=(i)/AvaibleCustomer*20;
+            if(i%AvailableCustomer==0){
+            temp=(i)/AvailableCustomer*20;
             }
             else{
-                temp=(i+1)/AvaibleCustomer*20;
+                temp=(i+1)/AvailableCustomer*20;
             }
         }
     }

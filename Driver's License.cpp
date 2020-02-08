@@ -2,37 +2,40 @@
 #include<ctype.h>
 
 int main() {
-    char people[5][10];
-    int people1[2][5];
+    char people[2][5][10];
     int AvaibleCustomer;
     int temp;
-    scanf("%s", people[0]);
+    scanf("%s", people[0][0]);
     scanf("%d", &AvaibleCustomer);
-    scanf("%s %s %s %s", people[1], people[2], people[3], people[4]);
+    scanf("%s %s %s %s", people[0][1], people[0][2], people[0][3], people[0][4]);
     for(int i=0; i<5; i++){
         for(int j=0; people[i][j]!='\0'; j++){
-            people[i][j]=tolower(people[i][j]);
+            people[0][i][j]=tolower(people[0][i][j]);
         }
     }
-    for (int i=0; i<4; i++){
-        for (int j=0; people[i][j]!='\0';j++){
-            for (int k=0; k<10-j; k++){
-                people1[0][i]+= people[i][j];
+    people[1][0][0]=people[0][0][0];
+    for (int i=0; i<5; i++){
+        for(int j=0; j<i; j++){
+            for(int k=0; people[0][i][k]!='\0'||people[0][j][k]!='\0'; k++){
+                if(people[0][i][k]<people[0][j][k]){
+                    for(int l=0; people[0][i][l]!='\0'&&people[0][j][l]!='\0'; l++){
+                        temp=people[0][i][l];
+                        people[0][i][l]=people[0][j][l];
+                        people[0][j][l]= temp;
+                    }
+                }
+                else if(people[0][i][k]>people[0][j][k]){
+                    break;
+                }
+                else{
+                    continue;
+                }
             }
         }
     }
-    people1[1][0]= people1[0][0];
+    
     for (int i=0; i<5; i++){
-        for (int j=0; j<i; j++){
-            if(people1[0][i]<=people1[0][j]){
-                temp=people1[0][i];
-                people1[0][i]=people1[0][j];
-                people1[0][j]=temp;
-            }
-        }
-    }
-    for (int i=0; i<5; i++){
-        if (people1[0][i]==people1[1][0]){
+        if (people1[0][0][i]==people1[1][0]){
             if(i%AvaibleCustomer==0){
             temp=(i)/AvaibleCustomer*20;
             }

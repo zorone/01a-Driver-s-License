@@ -16,14 +16,9 @@ int main() {
         }
     }
 
-    printf("   people[i][j]-96                           people1[0][i]\n");
-    printf(" people[i][j]          (people[i][j]-96)*pow(26, 10-j)\n");
-    printf(" j            pow(26, 10-j)\n");
-
     for (int i=0; i<4; i++){
         for (int j=0; people[i][j]!='\0';j++){
             people1[0][i] += (people[i][j] - 96)* pow (26, 10-j);
-            printf("%2d %3.0lf %2.0lf %15.0lf %15.0lf %15.0lf\n", j, people[i][j], people[i][j]-96, pow(26, 10-j), (people[i][j]-96)*pow(26, 10-j), people1[0][i]);
         }
     }
     people1[1][0]= people1[0][0];
@@ -36,12 +31,11 @@ int main() {
             }
         }
     }
-    printf ("%lf %lf %lf %lf %lf\n", people[0][0], people[0][1], people[0][2], people[0][3], people[0][4]);
 
     for (int i=0; i<5; i++){
         if (people1[0][i]==people1[1][0]){
             temp = (i+1)*20;
-            printf("%d %.0lf", i, temp);
+            printf("%.0lf", temp);
         }
     }
     return 0;

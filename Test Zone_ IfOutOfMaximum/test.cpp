@@ -21,7 +21,7 @@ int main(){
     printf("%d\n", n2);
 
     for(int i=0; i<6; i++){
-        for(int j=0; j<10; j++){
+        for(int j=0; j<20; j++){
             n1 = pow(i, j);
             n2 = pow(i, j);
             printf("%d %d %15d %15d %15d\n", i, j, n1, n2, pow(i, j));

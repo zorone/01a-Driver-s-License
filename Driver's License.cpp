@@ -33,8 +33,8 @@ int main() {
     }
 
     for (int i=0; i<5; i++){
-        if (people1[0][i]==people1[1][0]){
-            temp = (i+1)*20;
+        if (people1[0][i]==people1[1][0]){ 
+            temp = ((i+1)%AvailableCustomer==0)?(i+1)/AvailableCustomer*20:((i+1)/AvailableCustomer+1)*20;
             printf("%.0lf", temp);
         }
     }

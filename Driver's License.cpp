@@ -40,7 +40,7 @@ int main() {
 
     for (int i=0; i<5; i++){
         if (people1[0][i]==people1[1][0]){
-            temp = i*20;
+            temp = (i+1)*20;
             printf("%d %.0lf", i, temp);
         }
     }

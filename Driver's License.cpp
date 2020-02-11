@@ -18,8 +18,7 @@ int main() {
 
     for (int i=0; i<5; i++){
         for (int j=0; people[i][j]!='\0';j++){
-            people1[0][i] += (people[i][j] - 96)* pow (26, 10-j);
-            printf("%2d %2d %3.0d %2.0d %16.0lf %16.0lf %16.0lf\n", i, j, people[i][j], people[i][j]-96, pow(26, 10-j), (people[i][j]-96)*pow(26, 10-j), people1[0][i]);
+            people1[0][i] += (people[i][j] - 96)* pow (26, 10-j);;
         }
     }
     people1[1][0]= people1[0][0];
@@ -30,8 +29,6 @@ int main() {
                 people1[0][i]=people1[0][j];
                 people1[0][j]=temp;
             }
-
-            printf("%.0lf %.0lf %.0lf %.0lf %.0lf\n", people1[0][0], people1[0][1], people1[0][2], people1[0][3], people1[0][4]);
         }
     }
 
